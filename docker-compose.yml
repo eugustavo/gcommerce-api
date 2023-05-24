@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+    postgres-db:
+        container_name: postgres-container
+        image: postgres:latest
+        restart: always
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: mydatabase
+        ports:
+            - '5432:5432'
+        volumes:
+            - ./data:/var/lib/postgresql/data
+    api-nestjs:
+        container_name: api-nestjs-container
+        build: .
+        restart: always
+        ports:
+            - '3000:3000'
+        depends_on:
+            - postgres-db
+        environment:
+            NODE_ENV: development
+        volumes:
+            - .:/app
+            - /app/node_modules
