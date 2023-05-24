@@ -28,8 +28,15 @@
 ## Running the app
 
 ```bash
-
 # run docker-compose
 $ docker-compose up -d
 
+# chame o endpoint de popular o banco de dados
+curl -X 'POST' \
+  'http://localhost:3000/product/popule-database' \
+  -H 'accept: */*' \
+  -d ''
+
 ```
+## Documentation Swagger
+Acesse a documentação da API em: http://localhost:3000/api
