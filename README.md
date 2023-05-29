@@ -1,26 +1,18 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <img src="https://github.com/eugustavo/gcommerce-api/assets/25755550/065f4376-dda9-4c05-b657-09849abe02e2" width="200" alt="GCommerce Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+<p align="center">
+  API feita com Nestjs para o <a href="https://gcommerce-web.vercel.app" target="_blank">GCommerce</a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+
+<p align="center">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/eugustavo/gcommerce-api" />
+  <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/eugustavo/gcommerce-api" />
+  <img alt="GitHub Commit Activity (Week)" src="https://img.shields.io/github/commit-activity/w/eugustavo/gcommerce-api" />
+</p>
+
 
 ## Installation
 É um requisito para o projeto que o docker esteja instalado na máquina, caso não esteja, siga as instruções de instalação no site oficial: https://docs.docker.com/engine/install/
@@ -31,12 +23,21 @@
 # run docker-compose
 $ docker-compose up -d
 
+# troque as variáveis de acesso ao database
+> src/app.module.ts
+
+# Instale as dependências
+$ yarn install
+
+# Rode a aplicação
+$ yarn start:dev
+
 # chame o endpoint de popular o banco de dados
 curl -X 'POST' \
-  'http://localhost:3000/product/popule-database' \
+  'http://localhost:3333/product/popule-database' \
   -H 'accept: */*' \
   -d ''
 
 ```
 ## Documentation Swagger
-Acesse a documentação da API em: http://localhost:3000/api
+Acesse a documentação da API em: http://localhost:3333/api
