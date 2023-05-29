@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ProductService } from './product.service';
 
-@Controller('product')
+@Controller('products')
 export class ProductController {
     constructor(private readonly productService: ProductService) {}
 
@@ -16,8 +16,13 @@ export class ProductController {
         return this.productService.findAll();
     }
 
+    @Get(':id')
+    findById(@Param('id') id: number) {
+        return this.productService.findById(id);
+    }
+
     @Delete(':id')
-    remove(@Param('id') id: string) {
-        return 'Boa Sorte';
+    remove(@Param('id') id: number) {
+        return this.productService.remove(id);
     }
 }

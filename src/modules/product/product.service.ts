@@ -12,10 +12,11 @@ export class ProductService {
 
     async populeDataBase() {
         const productsToCreate = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 8; i++) {
             const product = new Product();
             product.name = faker.commerce.productName();
             product.description = faker.commerce.productDescription();
+            product.category = faker.commerce.department();
             product.price = Math.floor(Math.random() * 1000) + 1;
             product.image = faker.image.urlLoremFlickr({ category: 'fashion' });
             product.rating_stars = Math.floor(Math.random() * 5) + 1;
@@ -30,7 +31,19 @@ export class ProductService {
         return await this.productRepository.find();
     }
 
-    remove(id: number) {
-        return `This action removes a #${id} product`;
+    async findById(id: number) {
+        const product = await this.productRepository.findOne({
+            where: { id },
+        });
+
+        if (!product) {
+            throw new Error('Product not found');
+        }
+
+        return product;
+    }
+
+    async remove(id: number) {
+        return await this.productRepository.delete(id);
     }
 }
