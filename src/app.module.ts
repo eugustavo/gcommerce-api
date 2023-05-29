@@ -9,11 +9,11 @@ import { ProductModule } from './modules/product/product.module';
         TypeOrmModule.forRootAsync({
             useFactory: () => ({
                 type: 'postgres',
-                host: 'postgres-container',
+                host: 'silly.db.elephantsql.com',
                 port: 5432,
-                username: 'postgres',
-                password: 'postgres',
-                database: 'mydatabase',
+                username: 'bveqpdzu',
+                password: 'RwPwDADxie3GmZawo7fb0ANGh63ES904',
+                database: 'bveqpdzu',
                 entities: [__dirname + '/**/*.entity{.ts,.js}'],
                 synchronize: true,
             }),
